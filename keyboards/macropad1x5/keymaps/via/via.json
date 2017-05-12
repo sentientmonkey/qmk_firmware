@@ -1,0 +1,15 @@
+{
+    "name": "Macropad1x5",
+    "vendorId": "0x0801",
+    "productId": "0x1133",
+    "lighting": "none",
+    "matrix": {
+        "rows": 1,
+        "cols": 5
+    },
+    "layouts": {
+        "keymap": [
+          [{"y": -1, "x": 2}, "0,0", "0,1", "0,2", "0,3", "0,4"]
+        ]
+    }
+}

@@ -33,13 +33,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
  * insert home   up  end   pgup       ||      up     F7    F8    F9   F10
  *  del   left  down right pgdn       ||     down    F4    F5    F6   F11
- *       volup             reset      ||             F1    F2    F3   F12
+ *       volup             reset      ||     sft     F1    F2    F3   F12
  *       voldn  super shift bksp ctrl || alt space   L0  prtsc scroll pause
  */
 [_LW] = { /* [> LOWER <] */
   {KC_INS,  KC_HOME, KC_UP,   KC_END,  KC_PGUP, KC_TRNS, KC_UP,   KC_F7,   KC_F8,   KC_F9,   KC_F10},
   {KC_DELT, KC_LEFT, KC_DOWN, KC_RGHT, KC_DOWN, KC_TRNS, KC_DOWN, KC_F4,   KC_F5,   KC_F6,   KC_F11},
-  {KC_NO,   KC_VOLU, KC_NO,   KC_NO,   RESET,   KC_LCTL, KC_NO,   KC_F1,   KC_F2,   KC_F3,   KC_F12},
+  {KC_NO, KC_VOLU, KC_NO,   KC_NO,   RESET,   KC_LCTL, LALT(LCTL(KC_LGUI)),   KC_F1,   KC_F2,   KC_F3,   KC_F12},
   {KC_NO,   KC_VOLD, KC_LGUI, KC_LSFT, KC_BSPC, KC_LALT, KC_SPC,  TO(_QW), KC_PSCR, KC_SLCK, KC_PAUS}
 }};
 

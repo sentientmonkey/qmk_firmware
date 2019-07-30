@@ -112,3 +112,27 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   }
   return true;
 }
+
+// Initialize rgblight
+void keyboard_post_init_user(void) {
+        rgblight_enable_noeeprom();
+        rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);
+        layer_state_set_user(layer_state);
+        uint16_t user_hue = rgblight_get_hue();
+        for (uint16_t i = 0; i < 256; ++i) {
+                rgblight_sethsv_noeeprom( (i + user_hue) % 256, 255, 255);
+                wait_ms(5);
+        }
+        layer_state_set_user(layer_state);
+};
+
+// Turn on RGB underglow according to active layer
+uint32_t layer_state_set_user(uint32_t state) {
+        switch (biton32(state)) {
+                case _QWERTY: rgblight_sethsv_noeeprom(96, 255, 255); break;
+                case _LOWER: rgblight_sethsv_noeeprom(162, 255, 255); break;
+                case _RAISE: rgblight_sethsv_noeeprom(227, 255, 255); break;
+                default: rgblight_sethsv_noeeprom(13, 255, 255); break;
+        }
+        return state;
+};

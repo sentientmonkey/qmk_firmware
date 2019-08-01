@@ -129,10 +129,10 @@ void keyboard_post_init_user(void) {
 // Turn on RGB underglow according to active layer
 uint32_t layer_state_set_user(uint32_t state) {
         switch (biton32(state)) {
-                case _QWERTY: rgblight_sethsv_noeeprom(96, 255, 255); break;
-                case _LOWER: rgblight_sethsv_noeeprom(162, 255, 255); break;
-                case _RAISE: rgblight_sethsv_noeeprom(227, 255, 255); break;
-                default: rgblight_sethsv_noeeprom(13, 255, 255); break;
+                case _QWERTY: rgblight_sethsv_noeeprom(HSV_GREEN); break;
+                case _LOWER: rgblight_sethsv_noeeprom(HSV_BLUE); break;
+                case _RAISE: rgblight_sethsv_noeeprom(HSV_RED); break;
+                default: rgblight_sethsv_noeeprom(HSV_WHITE); break;
         }
         return state;
 };

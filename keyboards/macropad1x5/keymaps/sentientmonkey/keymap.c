@@ -45,36 +45,17 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     return true;
 }
 
-const rgblight_segment_t PROGMEM media_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {1, 4, HSV_GREEN}
-);
-
-const rgblight_segment_t PROGMEM zoom_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {1, 4, HSV_CYAN}
-);
-
-const rgblight_segment_t PROGMEM meet_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {1, 4, HSV_RED}
-);
-
-// Now define the array of layers. Later layers take precedence
-const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
-    media_layer,
-    zoom_layer,
-    meet_layer
-);
-
-void keyboard_post_init_user(void) {
-    rgblight_layers = my_rgb_layers;
-}
-
-layer_state_t default_layer_state_set_user(layer_state_t state) {
-    rgblight_set_layer_state(1, layer_state_cmp(state, _Media));
-    return state;
-}
-
-layer_state_t layer_state_set_user(layer_state_t state) {
-    rgblight_set_layer_state(2, layer_state_cmp(state, _Zoom));
-    rgblight_set_layer_state(3, layer_state_cmp(state, _Meet));
-    return state;
+uint32_t layer_state_set_user(uint32_t state) {
+  switch (biton32(state)) {
+    case _Media:
+      backlight_level(3);
+      break;
+    case _Zoom:
+      backlight_level(2);
+      break;
+    case _Meet:
+      backlight_level(1);
+      break;
+  }
+  return state;
 }

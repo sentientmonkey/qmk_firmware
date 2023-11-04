@@ -50,9 +50,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      KC_LCTL, KC_DEL, KC_LEFT,  KC_DOWN,KC_RGHT, KC_PGDN,                             KC_DOWN,  KC_F4,   KC_F5,   KC_F6,   KC_F11, KC_ENT,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_LSFT, KC_NO,   KC_VOLU, KC_NO,    KC_NO,    RESET,                           KC_RSFT,  KC_F1,   KC_F2,   KC_F3,   KC_F12,  KC_RSFT,
+     KC_LSFT, KC_NO,   KC_VOLU, KC_NO,    KC_NO,    QK_BOOT,                           KC_RSFT,  KC_F1,   KC_F2,   KC_F3,   KC_F12,  KC_RSFT,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_GRV,  KC_NO,   KC_VOLD, KC_LGUI, KC_LSFT, KC_NO, KC_NO,             _______, TO(_QWERTY),TO(_QWERTY),KC_PSCR,KC_SLCK, KC_PAUS, KC_DEL,
+     KC_GRV,  KC_NO,   KC_VOLD, KC_LGUI, KC_LSFT, KC_NO, KC_NO,             _______, TO(_QWERTY),TO(_QWERTY),KC_PSCR,KC_SCRL, KC_PAUS, KC_DEL,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                     _______, KC_BSPC, KC_LCTL,                   KC_RALT, KC_SPC,  TO(_QWERTY)
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘

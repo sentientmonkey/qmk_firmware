@@ -49,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                               KC_HOME,
                                                 KC_BSPC,KC_LCTL,KC_END,
         // right hand
-             TT(2),       KC_6,   KC_7,  KC_8,   KC_9,   KC_0,             KC_DELT,
+             TT(2),       KC_6,   KC_7,  KC_8,   KC_9,   KC_0,             KC_DEL,
              KC_RBRC,     KC_Y,   KC_U,  KC_I,   KC_O,   KC_P,             KC_BSLS,
                           KC_H,   KC_J,  KC_K,   KC_L,   LT(MDIA, KC_SCLN),KC_ENT,
              LCAG(KC_NO),KC_N,   KC_M,  KC_COMM,KC_DOT, KC_SLSH,          KC_RSFT,
@@ -89,7 +89,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TRNS, TO(MDIA),KC_INS,KC_LGUI,KC_LSFT,
                                        KC_LALT,KC_TRNS,
                                                KC_TRNS,
-                               KC_BSPC,KC_LCTRL, KC_TRNS,
+                               KC_BSPC,KC_LCTL, KC_TRNS,
        // right hand
        KC_TRNS, KC_F6,   KC_F7,  KC_F8,   KC_F9,   KC_F10,  KC_F11,
        KC_TRNS, KC_PGUP, KC_7,   KC_8,    KC_9,    KC_ASTR, KC_F12,
@@ -125,7 +125,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [MDIA] = LAYOUT_ergodox(
        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
        KC_TAB,  KC_INS,  KC_TRNS, KC_UP,   KC_END,  KC_PGUP, KC_TRNS,
-       KC_LCTL, KC_DELT, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,
+       KC_LCTL, KC_DEL, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,
        KC_LSFT, KC_TRNS, KC_VOLU, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
        KC_TRNS, KC_TRNS, KC_VOLD, KC_LGUI, KC_LSFT,
                                            KC_LALT, KC_TRNS,
@@ -143,6 +143,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 };
 
+/*
 const uint16_t PROGMEM fn_actions[] = {
     [1] = ACTION_LAYER_TAP_TOGGLE(SYMB)                // FN1 - Momentary Layer 1 (Symbols)
 };
@@ -164,6 +165,7 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
       }
     return MACRO_NONE;
 };
+*/
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {

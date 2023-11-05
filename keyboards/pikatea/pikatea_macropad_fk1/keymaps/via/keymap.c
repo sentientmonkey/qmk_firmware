@@ -27,6 +27,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 
+/*
+enum fk_td {
+  TD_LAYER_TOGGLE = 0,
+}
+
+tap_dance_action_t tap_dance_actions[] = {
+  [TD_LAYER_TOGGLE] = ACTION_TAP_DANCE_FN_ADVANCED(fk_td_each, fk_td_finished, fk_td_reset);
+};
 
 #ifdef ENCODER_ENABLE
 bool encoder_update_user(uint8_t index, bool clockwise) {
@@ -39,4 +47,4 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     return true;
 }
 #endif
-
+*/

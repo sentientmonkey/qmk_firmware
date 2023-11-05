@@ -29,10 +29,10 @@ enum layer_number {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT_all(
-        KC_F15,  KC_F16,   KC_MEDIA_PREV_TRACK,    KC_MEDIA_PLAY_PAUSE,    KC_MEDIA_NEXT_TRACK,    KC_TRNS
+        TO(_LOWER),  KC_MEDIA_PLAY_PAUSE,   KC_MEDIA_PREV_TRACK,    KC_MEDIA_NEXT_TRACK,    KC_MUTE,    KC_MUTE
     ),
     [_LOWER] = LAYOUT_all(
-        KC_TRNS,   KC_TRNS,  KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS
+        TO(_BASE),   QK_BOOT,  KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS
     )
 };
 
@@ -40,10 +40,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #ifdef ENCODER_ENABLE
 bool encoder_update_user(uint8_t index, bool clockwise) {
     // Volume control
-    if (!clockwise) {
-        tap_code(KC_VOLU);
+    if (clockwise) {
+        tap_code(KC_AUDIO_VOL_UP);
     } else {
-        tap_code(KC_VOLD);
+        tap_code(KC_AUDIO_VOL_DOWN);
     }
     return true;
 }
